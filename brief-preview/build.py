@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import argparse
-from datetime import date
+from datetime import date, timedelta
 from hashlib import sha256
 from html import escape
 import json
@@ -35,10 +35,13 @@ def validate(issue):
     start = iso(issue["window_start"])
     end = iso(issue["window_end"])
     day_only = issue.get("day_only", False)
+    previous_day_only = issue.get("previous_day_only", False)
+    if previous_day_only and not start == end == day - timedelta(days=1):
+        raise ValueError("前一日新内容的材料日期必须等于期号日期减一天")
     if day_only and not start == end == day:
         raise ValueError("单日样刊只使用本期日期的材料")
     min_days, max_days = (7, 30) if issue.get("published_site") else (3, 7)
-    if not day_only and not (start <= end <= day and min_days <= (end - start).days + 1 <= max_days):
+    if not day_only and not previous_day_only and not (start <= end <= day and min_days <= (end - start).days + 1 <= max_days):
         raise ValueError(f"证据窗口应为截至当期日期的 {min_days}–{max_days} 日")
     policy = issue.get("screening_policy", "legacy")
     if policy not in {"legacy", "core-research-v1", "core-research-v2"}:
@@ -76,6 +79,8 @@ def validate(issue):
         if link.scheme not in {"https", "http"} or not link.hostname or link.username:
             raise ValueError(f"原文链接无效：{item['id']}")
         published = iso(item["published"])
+        if previous_day_only and published != start:
+            raise ValueError(f"前一日专刊不能混入其他日期的材料：{item['id']}")
         background = item.get("background") is True and (item in issue["support"] or separate_push)
         if not (start <= published <= end or (not day_only and background and published < start)):
             raise ValueError(f"来源日期超出证据窗口：{item['id']}")
