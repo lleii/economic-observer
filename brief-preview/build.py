@@ -326,6 +326,48 @@ def main():
     if args.output.resolve() == ROOT.parent:
         parser.error("请使用独立预览目录")
     build(args.issues, args.output, (ROOT / "theme.css").read_text(encoding="utf-8-sig"))
+    build_reading(args.output)
+
+
+def build_reading(output):
+    folder = ROOT.parent / "reading-editions"
+    if not folder.exists():
+        return
+    readings = []
+    for path in sorted(folder.glob("*.json"), reverse=True):
+        issue = json.loads(path.read_text(encoding="utf-8-sig"))
+        day = iso(issue["date"])
+        if path.stem != issue["date"] or iso(issue["material"]) != day - timedelta(days=1):
+            raise ValueError("阅读期号与前一日材料日期不一致")
+        if not issue["items"]:
+            raise ValueError("不能发布空阅读期刊")
+        for item in issue["items"]:
+            if item["published"] != issue["material"] or item["section"] not in (0, 1, 2):
+                raise ValueError("阅读材料日期或来源分组错误")
+            if urlsplit(item["url"]).scheme not in ("http", "https"):
+                raise ValueError("阅读原文链接无效")
+            if "经济观察报" in item["source"]:
+                raise ValueError("已排除该来源")
+        readings.append(issue)
+    if not readings:
+        return
+    template = (ROOT / "reading-template.html").read_text(encoding="utf-8")
+    old_days = sorted(p.stem.removeprefix("economic-brief-") for p in output.glob("economic-brief-*.html"))
+    links = [(x["date"], f'reading-{x["date"]}.html') for x in readings]
+    links += [(day, issue_path(day)) for day in old_days]
+    archive = "".join(f'<a style="display:inline-block;margin:8px;color:#195f48" href="{url}">{day}</a>' for day, url in sorted(links, reverse=True))
+    for issue in readings:
+        data = [issue] + [x for x in readings if x["date"] != issue["date"]]
+        counts = [sum(x["section"] == n for x in issue["items"]) for n in range(3)]
+        notice = f'候选阅读版 · 材料日期 {issue["material"]} · 报刊 {counts[0]} 篇、中央部门 {counts[1]} 篇、机构媒体 {counts[2]} 篇。未达每类10篇；访问待复核状态随文显示。'
+        html = template.replace("__ISSUES__", json.dumps(data, ensure_ascii=False).replace("<", "\\u003c")).replace("__ARCHIVE__", archive).replace("__NOTICE__", escape(notice)).replace("__DATE__", issue["date"])
+        snapshot = output / f'reading-{issue["date"]}.html'
+        if not snapshot.exists():
+            write(snapshot, html)
+        if issue == readings[0]:
+            write(output / "index.html", html)
+            write(output / "today.html", html)
+            write(output / "archive.html", page("历史归档", "archive", '<h1>历史归档</h1>' + archive, (ROOT / "theme.css").read_text(encoding="utf-8-sig")))
 
 
 if __name__ == "__main__":

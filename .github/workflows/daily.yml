@@ -14,6 +14,8 @@ on:
     branches: [main]
     paths:
       - 'editions/**'
+      - 'reading-editions/**'
+      - 'brief-preview/reading-template.html'
       - 'site-archive/**'
       - 'brief-preview/build.py'
       - 'brief-preview/theme.css'
