@@ -1,14 +1,14 @@
 {
-  "updated": "2026-11-23T11:24:02.558901+08:00",
-  "total": 399,
+  "updated": "2026-11-24T14:36:57.696640+08:00",
+  "total": 457,
   "sources": [
     {
       "source": "人民日报",
       "lists": 3,
-      "links": 168,
+      "links": 216,
       "checked": 75,
       "dated": 75,
-      "body": 68,
+      "body": 71,
       "accepted": 29,
       "other_origin": 0,
       "warnings": []
@@ -16,22 +16,22 @@
     {
       "source": "经济日报",
       "lists": 2,
-      "links": 92,
+      "links": 87,
       "checked": 75,
-      "dated": 1,
-      "body": 1,
-      "accepted": 1,
-      "other_origin": 74,
+      "dated": 8,
+      "body": 8,
+      "accepted": 5,
+      "other_origin": 67,
       "warnings": []
     },
     {
       "source": "光明日报",
       "lists": 3,
-      "links": 157,
+      "links": 177,
       "checked": 75,
       "dated": 75,
-      "body": 73,
-      "accepted": 24,
+      "body": 75,
+      "accepted": 27,
       "other_origin": 0,
       "warnings": []
     },
@@ -40,10 +40,10 @@
       "lists": 1,
       "links": 95,
       "checked": 75,
-      "dated": 36,
-      "body": 36,
-      "accepted": 3,
-      "other_origin": 39,
+      "dated": 35,
+      "body": 35,
+      "accepted": 4,
+      "other_origin": 40,
       "warnings": []
     },
     {
@@ -53,7 +53,7 @@
       "checked": 45,
       "dated": 45,
       "body": 29,
-      "accepted": 8,
+      "accepted": 9,
       "other_origin": 0,
       "warnings": []
     },
