@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-29",
+  "material": "2026-11-28",
+  "status": "每日阅读",
+  "items": [
+    {
+      "title": "长江经济带成为我国最具创新活力区域之一",
+      "source": "光明日报",
+      "url": "https://epaper.gmw.cn/gmrb/html/content/202611/28/content_31471.html",
+      "published": "2026-11-28",
+      "section": 0,
+      "type": "报刊报道",
+      "keywords": [
+        "人工智能",
+        "产业经济"
+      ],
+      "takeaway": "报道介绍长江经济带创新产出与知识产权服务布局，包括专利预审、产业运营中心和公共服务机构对企业创新的支持。",
+      "verification": "已核对原报11月28日日期与正文；观点按作者主张呈现"
+    },
+    {
+      "title": "楼上楼下，研发中试加转化",
+      "source": "人民日报",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/28/content_30193546.html",
+      "published": "2026-11-28",
+      "section": 0,
+      "type": "报刊报道",
+      "keywords": [
+        "企业创新",
+        "智能技术",
+        "人工智能"
+      ],
+      "takeaway": "报道以河北创新港为例，介绍把研发、中试与产业应用集中组织，并通过资源互认、专业平台和基金支持推动京津科研成果落地。",
+      "verification": "已核对原报11月28日日期与正文；观点按作者主张呈现"
+    },
+    {
+      "title": "支持不同数字身份间互通互认",
+      "source": "人民日报",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/28/content_30193552.html",
+      "published": "2026-11-28",
+      "section": 0,
+      "type": "报刊报道",
+      "keywords": [
+        "人工智能",
+        "智能体"
+      ],
+      "takeaway": "报道介绍11部门公布的数字身份互通互认规定，明确各参与方职责及凭证使用机制；规定自2027年3月1日起施行。",
+      "verification": "已核对原报11月28日日期与正文；观点按作者主张呈现"
+    },
+    {
+      "title": "推进人工智能辅助科研规范有序发展",
+      "source": "光明日报",
+      "url": "https://epaper.gmw.cn/gmrb/html/content/202611/28/content_31499.html",
+      "published": "2026-11-28",
+      "section": 0,
+      "type": "署名评论",
+      "keywords": [
+        "人工智能",
+        "智能技术"
+      ],
+      "takeaway": "作者主张以人类智力贡献为核心，明确AI辅助科研的权利、责任与披露要求，形成与知识产权和科研管理衔接的规则体系。",
+      "verification": "已核对原报11月28日日期与正文；观点按作者主张呈现"
+    },
+    {
+      "title": "别让AI客服抬高维权成本",
+      "source": "经济日报",
+      "url": "http://www.ce.cn/cysc/newmain/yc/jsxw/202611/t20261128_3311121.shtml",
+      "published": "2026-11-28",
+      "section": 0,
+      "type": "署名评论",
+      "keywords": [
+        "数字经济",
+        "智能技术"
+      ],
+      "takeaway": "评论认为，商家不能享受AI客服降本的便利却回避错误答复责任，应提供便捷人工渠道，并保证对话证据可查询、可追溯。",
+      "verification": "已核对原报11月28日日期与正文；观点按作者主张呈现"
+    },
+    {
+      "title": "企业利润“晴雨表”，一幅动能转换“透视图”（经济时评）",
+      "source": "人民日报",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/28/content_30193561.html",
+      "published": "2026-11-28",
+      "section": 0,
+      "type": "署名评论",
+      "keywords": [
+        "产业经济",
+        "算力",
+        "人工智能",
+        "企业创新"
+      ],
+      "takeaway": "评论从工业利润数据观察动能转换，指出高技术制造业增长较快，而钢铁、汽车等行业仍有压力，不能用总体改善掩盖行业分化。",
+      "verification": "已核对原报11月28日日期与正文；观点按作者主张呈现"
+    },
+    {
+      "title": "太空数据中心在轨技术试验平台上线",
+      "source": "第一财经（据北京发布）",
+      "url": "https://www.yicai.com/news/103458660.html",
+      "published": "2026-11-28",
+      "section": 2,
+      "type": "技术进展报道",
+      "keywords": [
+        "算力基础设施",
+        "技术验证"
+      ],
+      "takeaway": "报道介绍辰光一号01星完成既定测试后转入在轨试验服务阶段；平台上线属于技术验证进展，不等于太空数据中心已商业化运营。",
+      "verification": "原文2026-11-28 18:56:33；事件发生时间为11月27日，与报道日期分别记录"
+    }
+  ]
+}
